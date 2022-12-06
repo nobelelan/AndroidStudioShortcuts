@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_updateFragment_to_shortcutFragment"
             app:destination="@id/shortcutFragment" />
+        <argument
+            android:name="currentItem"
+            app:argType="com.example.androidstudioshortcuts.Shortcut" />
     </fragment>
     <fragment
         android:id="@+id/addFragment"

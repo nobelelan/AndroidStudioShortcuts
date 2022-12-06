@@ -3,6 +3,8 @@ package com.example.androidstudioshortcuts
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidstudioshortcuts.databinding.ShortcutRowLayoutBinding
 
@@ -21,6 +23,11 @@ class ShortcutAdapter: RecyclerView.Adapter<ShortcutAdapter.ShortcutViewHolder>(
         holder.binding.textViewDescription.text = dataList[position].description
         holder.binding.textViewWindows.text = "Windows: ${dataList[position].windows}"
         holder.binding.textViewMac.text = "Mac: ${dataList[position].mac}"
+
+        holder.binding.shortcutRowBackground.setOnClickListener {
+            val action = ShortcutFragmentDirections.actionShortcutFragmentToUpdateFragment(dataList[position])
+            holder.itemView.findNavController().navigate(action)
+        }
     }
 
     override fun getItemCount(): Int {

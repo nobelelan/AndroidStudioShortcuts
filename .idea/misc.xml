@@ -7,8 +7,10 @@
         <entry key="..\:/AndroidStudioProjects/MVVM/AndroidStudioShortcuts/app/src/main/res/layout/activity_main.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/MVVM/AndroidStudioShortcuts/app/src/main/res/layout/fragment_add.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/MVVM/AndroidStudioShortcuts/app/src/main/res/layout/fragment_shortcut.xml" value="0.3625" />
+        <entry key="..\:/AndroidStudioProjects/MVVM/AndroidStudioShortcuts/app/src/main/res/layout/fragment_update.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/MVVM/AndroidStudioShortcuts/app/src/main/res/layout/shortcut_row_layout.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/MVVM/AndroidStudioShortcuts/app/src/main/res/menu/add_fragment_menu.xml" value="0.3625" />
+        <entry key="..\:/AndroidStudioProjects/MVVM/AndroidStudioShortcuts/app/src/main/res/menu/update_fragment_menu.xml" value="0.3614583333333333" />
       </map>
     </option>
   </component>

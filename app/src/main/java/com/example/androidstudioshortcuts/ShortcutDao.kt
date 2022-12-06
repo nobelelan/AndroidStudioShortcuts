@@ -1,10 +1,7 @@
 package com.example.androidstudioshortcuts
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface ShortcutDao {
@@ -14,4 +11,7 @@ interface ShortcutDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertData(shortcut: Shortcut)
+
+    @Update
+    suspend fun updateData(shortcut: Shortcut)
 }

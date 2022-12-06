@@ -24,4 +24,10 @@ class ShortcutViewModel(application: Application): AndroidViewModel(application)
             repository.insertData(shortcut)
         }
     }
+
+    fun updateData(shortcut: Shortcut){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.updateData(shortcut)
+        }
+    }
 }

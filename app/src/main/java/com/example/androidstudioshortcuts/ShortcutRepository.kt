@@ -10,4 +10,8 @@ class ShortcutRepository(private val shortcutDao: ShortcutDao) {
         shortcutDao.insertData(shortcut)
     }
 
+    suspend fun updateData(shortcut: Shortcut){
+        shortcutDao.updateData(shortcut)
+    }
+
 }
