@@ -17,4 +17,7 @@ interface ShortcutDao {
 
     @Delete
     suspend fun deleteItem(shortcut: Shortcut)
+
+    @Query("SELECT * FROM shortcut WHERE description LIKE :searchQuery")
+    fun searchDatabase(searchQuery: String): LiveData<List<Shortcut>>
 }

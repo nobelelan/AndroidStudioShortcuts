@@ -36,4 +36,8 @@ class ShortcutViewModel(application: Application): AndroidViewModel(application)
             repository.deleteItem(shortcut)
         }
     }
+
+    fun searchDatabase(searchQuery: String): LiveData<List<Shortcut>>{
+        return repository.searchDatabase(searchQuery)
+    }
 }

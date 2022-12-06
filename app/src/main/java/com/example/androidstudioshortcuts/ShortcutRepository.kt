@@ -18,4 +18,8 @@ class ShortcutRepository(private val shortcutDao: ShortcutDao) {
         shortcutDao.deleteItem(shortcut)
     }
 
+    fun searchDatabase(searchQuery: String): LiveData<List<Shortcut>>{
+        return shortcutDao.searchDatabase(searchQuery)
+    }
+
 }

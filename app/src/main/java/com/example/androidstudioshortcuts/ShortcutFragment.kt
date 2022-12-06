@@ -1,10 +1,9 @@
 package com.example.androidstudioshortcuts
 
 import android.os.Bundle
+import android.view.*
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -15,7 +14,7 @@ import com.example.androidstudioshortcuts.databinding.FragmentShortcutBinding
 import com.google.android.material.snackbar.Snackbar
 
 
-class ShortcutFragment : Fragment() {
+class ShortcutFragment : Fragment(), SearchView.OnQueryTextListener {
 
     private var _binding: FragmentShortcutBinding? = null
     private val binding get() = _binding!!
@@ -40,8 +39,43 @@ class ShortcutFragment : Fragment() {
         binding.floatingActionButton.setOnClickListener {
             findNavController().navigate(R.id.action_shortcutFragment_to_addFragment)
         }
+        
+        // set menu
+        setHasOptionsMenu(true)
 
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.shortcut_fragment_menu, menu)
+
+        val search = menu.findItem(R.id.menuSearch)
+        val searchView = search.actionView as? SearchView
+        searchView?.isSubmitButtonEnabled = true
+        searchView?.setOnQueryTextListener(this)
+    }
+
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        if (query != null){
+            searchThroughDatabase(query)
+        }
+        return true
+    }
+
+    override fun onQueryTextChange(query: String?): Boolean {
+        if (query != null){
+            searchThroughDatabase(query)
+        }
+        return true
+    }
+
+    private fun searchThroughDatabase(query: String){
+        val searchQuery = "%$query%"
+        mShortcutViewModel.searchDatabase(searchQuery).observe(this, Observer { list ->
+            list?.let {
+                adapter.setData(it.asReversed())
+            }
+        })
     }
 
     private fun setUpRecyclerView() {
