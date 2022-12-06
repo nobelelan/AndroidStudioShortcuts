@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/shortcut_nav"
+    app:startDestination="@id/shortcutFragment">
+
+    <fragment
+        android:id="@+id/shortcutFragment"
+        android:name="com.example.androidstudioshortcuts.ShortcutFragment"
+        android:label="fragment_shortcut"
+        tools:layout="@layout/fragment_shortcut" >
+        <action
+            android:id="@+id/action_shortcutFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+        <action
+            android:id="@+id/action_shortcutFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.androidstudioshortcuts.UpdateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_updateFragment_to_shortcutFragment"
+            app:destination="@id/shortcutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.example.androidstudioshortcuts.AddFragment"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_addFragment_to_shortcutFragment"
+            app:destination="@id/shortcutFragment" />
+    </fragment>
+</navigation>
