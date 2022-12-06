@@ -30,4 +30,10 @@ class ShortcutViewModel(application: Application): AndroidViewModel(application)
             repository.updateData(shortcut)
         }
     }
+
+    fun deleteItem(shortcut: Shortcut){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteItem(shortcut)
+        }
+    }
 }

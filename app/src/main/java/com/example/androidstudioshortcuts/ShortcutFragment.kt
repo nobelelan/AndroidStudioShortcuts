@@ -8,8 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.androidstudioshortcuts.databinding.FragmentShortcutBinding
+import com.google.android.material.snackbar.Snackbar
 
 
 class ShortcutFragment : Fragment() {
@@ -45,6 +48,34 @@ class ShortcutFragment : Fragment() {
         val recyclerView = binding.shortcutRecycler
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireActivity())
+
+        // swap to delete item
+        swipeToDelete(recyclerView)
+    }
+
+    private fun swipeToDelete(recyclerView: RecyclerView) {
+        val swipeToDeleteCallback = object : SwipeToDelete(){
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val deletedItem = adapter.dataList[viewHolder.adapterPosition]
+                mShortcutViewModel.deleteItem(deletedItem)
+                adapter.notifyItemRemoved(viewHolder.adapterPosition)
+                restoreDeletedData(viewHolder.itemView, deletedItem)
+            }
+        }
+        val itemTouchHelper = ItemTouchHelper(swipeToDeleteCallback)
+        itemTouchHelper.attachToRecyclerView(recyclerView)
+    }
+
+    private fun restoreDeletedData(itemView: View, deletedItem: Shortcut) {
+        val snackBar = Snackbar.make(
+            itemView,
+            "Item deleted successfully.",
+            Snackbar.LENGTH_LONG
+        )
+        snackBar.setAction("Undo"){
+            mShortcutViewModel.insertData(deletedItem)
+        }
+        snackBar.show()
     }
 
     override fun onDestroyView() {

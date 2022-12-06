@@ -14,4 +14,8 @@ class ShortcutRepository(private val shortcutDao: ShortcutDao) {
         shortcutDao.updateData(shortcut)
     }
 
+    suspend fun deleteItem(shortcut: Shortcut){
+        shortcutDao.deleteItem(shortcut)
+    }
+
 }

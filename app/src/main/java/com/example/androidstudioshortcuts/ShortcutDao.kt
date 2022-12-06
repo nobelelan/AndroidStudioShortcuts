@@ -14,4 +14,7 @@ interface ShortcutDao {
 
     @Update
     suspend fun updateData(shortcut: Shortcut)
+
+    @Delete
+    suspend fun deleteItem(shortcut: Shortcut)
 }
