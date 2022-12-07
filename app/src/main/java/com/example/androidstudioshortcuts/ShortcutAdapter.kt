@@ -23,8 +23,8 @@ class ShortcutAdapter: RecyclerView.Adapter<ShortcutAdapter.ShortcutViewHolder>(
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ShortcutViewHolder, position: Int) {
         holder.binding.textViewDescription.text = dataList[position].description
-        holder.binding.textViewWindows.text = "Windows: ${dataList[position].windows}"
-        holder.binding.textViewMac.text = "Mac: ${dataList[position].mac}"
+        holder.binding.textViewWindows.text = dataList[position].windows
+        holder.binding.textViewMac.text = dataList[position].mac
 
         holder.binding.shortcutRowBackground.setOnClickListener {
             val action = ShortcutFragmentDirections.actionShortcutFragmentToUpdateFragment(dataList[position])

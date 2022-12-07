@@ -9,12 +9,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.androidstudioshortcuts.databinding.FragmentShortcutBinding
 import com.google.android.material.snackbar.Snackbar
-import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
 
 
 class ShortcutFragment : Fragment(), SearchView.OnQueryTextListener {
@@ -63,7 +61,7 @@ class ShortcutFragment : Fragment(), SearchView.OnQueryTextListener {
             val builder = AlertDialog.Builder(requireContext())
             builder.setIcon(R.drawable.ic_instruction)
             builder.setTitle("Instructions")
-            builder.setMessage("1. Swipe left to delete an item. \n2. Press undo to restore the deleted item. \n3. Search option works for description only.")
+            builder.setMessage("1. Tap on an item to update. \n2. Swipe left to delete an item. \n3. Press undo to restore the deleted item. \n4. Search through items by the title only.")
             builder.setPositiveButton("Ok"){_,_ ->}
             builder.show()
         }
