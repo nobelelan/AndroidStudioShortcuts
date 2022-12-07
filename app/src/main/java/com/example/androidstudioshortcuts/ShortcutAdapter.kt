@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidstudioshortcuts.databinding.ShortcutRowLayoutBinding
 
@@ -35,7 +36,9 @@ class ShortcutAdapter: RecyclerView.Adapter<ShortcutAdapter.ShortcutViewHolder>(
     }
 
     fun setData(shortcut: List<Shortcut>){
+        val shortcutDiffUtil = ShortcutDiffUtil(dataList, shortcut)
+        val shortcutDiffResult = DiffUtil.calculateDiff(shortcutDiffUtil)
         this.dataList = shortcut
-        notifyDataSetChanged()
+        shortcutDiffResult.dispatchUpdatesTo(this)
     }
 }
