@@ -1,5 +1,6 @@
 package com.example.androidstudioshortcuts
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.widget.SearchView
@@ -55,6 +56,18 @@ class ShortcutFragment : Fragment(), SearchView.OnQueryTextListener {
         val searchView = search.actionView as? SearchView
         searchView?.isSubmitButtonEnabled = true
         searchView?.setOnQueryTextListener(this)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menuInstruction){
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setIcon(R.drawable.ic_instruction)
+            builder.setTitle("Instructions")
+            builder.setMessage("1. Swipe left to delete an item. \n2. Press undo to restore the deleted item. \n3. Search option works for description only.")
+            builder.setPositiveButton("Ok"){_,_ ->}
+            builder.show()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {

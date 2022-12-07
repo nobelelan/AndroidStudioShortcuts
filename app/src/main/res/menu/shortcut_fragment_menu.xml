@@ -9,4 +9,9 @@
         app:showAsAction="ifRoom"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         />
+    <item
+        android:id="@+id/menuInstruction"
+        android:title="Instructions"
+        android:icon="@drawable/ic_instruction"
+        app:showAsAction="never"/>
 </menu>
