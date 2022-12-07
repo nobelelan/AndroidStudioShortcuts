@@ -12,10 +12,18 @@
         tools:layout="@layout/fragment_shortcut" >
         <action
             android:id="@+id/action_shortcutFragment_to_updateFragment"
-            app:destination="@id/updateFragment" />
+            app:destination="@id/updateFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
         <action
             android:id="@+id/action_shortcutFragment_to_addFragment"
-            app:destination="@id/addFragment" />
+            app:destination="@id/addFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_left" />
     </fragment>
     <fragment
         android:id="@+id/updateFragment"
@@ -24,7 +32,9 @@
         tools:layout="@layout/fragment_update" >
         <action
             android:id="@+id/action_updateFragment_to_shortcutFragment"
-            app:destination="@id/shortcutFragment" />
+            app:destination="@id/shortcutFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
         <argument
             android:name="currentItem"
             app:argType="com.example.androidstudioshortcuts.Shortcut" />
@@ -36,6 +46,8 @@
         tools:layout="@layout/fragment_add" >
         <action
             android:id="@+id/action_addFragment_to_shortcutFragment"
-            app:destination="@id/shortcutFragment" />
+            app:destination="@id/shortcutFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right" />
     </fragment>
 </navigation>
