@@ -69,7 +69,7 @@ class ShortcutFragment : Fragment(), SearchView.OnQueryTextListener {
             val builder = AlertDialog.Builder(requireContext())
             builder.setIcon(R.drawable.ic_instruction)
             builder.setTitle("Instructions")
-            builder.setMessage("1. Tap on an item to update. \n2. Swipe left to delete an item. \n3. Press undo to restore the deleted item. \n4. Search through items by the title only.")
+            builder.setMessage("1. Tap on an item to update. \n2. Swipe left to delete an item. \n3. Press undo to restore deleted item. \n4. Search through items by the title only.")
             builder.setPositiveButton("Ok"){_,_ ->}
             builder.show()
         }
