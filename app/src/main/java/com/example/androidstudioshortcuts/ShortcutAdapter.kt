@@ -3,6 +3,7 @@ package com.example.androidstudioshortcuts
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DiffUtil
@@ -29,6 +30,10 @@ class ShortcutAdapter: RecyclerView.Adapter<ShortcutAdapter.ShortcutViewHolder>(
             val action = ShortcutFragmentDirections.actionShortcutFragmentToUpdateFragment(dataList[position])
             holder.itemView.findNavController().navigate(action)
         }
+
+        holder.binding.shortcutRowBackground.animation = (
+            AnimationUtils.loadAnimation(holder.itemView.context, R.anim.recyclerview_item_anim)
+        )
     }
 
     override fun getItemCount(): Int {
