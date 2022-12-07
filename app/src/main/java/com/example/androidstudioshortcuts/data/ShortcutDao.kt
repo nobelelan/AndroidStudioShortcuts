@@ -1,7 +1,8 @@
-package com.example.androidstudioshortcuts
+package com.example.androidstudioshortcuts.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.androidstudioshortcuts.Shortcut
 
 @Dao
 interface ShortcutDao {

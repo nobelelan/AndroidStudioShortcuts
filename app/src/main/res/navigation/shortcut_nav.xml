@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/shortcutFragment"
-        android:name="com.example.androidstudioshortcuts.ShortcutFragment"
+        android:name="com.example.androidstudioshortcuts.fragments.shortcut.ShortcutFragment"
         android:label="fragment_shortcut"
         tools:layout="@layout/fragment_shortcut" >
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/updateFragment"
-        android:name="com.example.androidstudioshortcuts.UpdateFragment"
+        android:name="com.example.androidstudioshortcuts.fragments.update.UpdateFragment"
         android:label="fragment_update"
         tools:layout="@layout/fragment_update" >
         <action
@@ -41,7 +41,7 @@
     </fragment>
     <fragment
         android:id="@+id/addFragment"
-        android:name="com.example.androidstudioshortcuts.AddFragment"
+        android:name="com.example.androidstudioshortcuts.fragments.add.AddFragment"
         android:label="fragment_add"
         tools:layout="@layout/fragment_add" >
         <action

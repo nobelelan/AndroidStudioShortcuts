@@ -1,9 +1,12 @@
-package com.example.androidstudioshortcuts
+package com.example.androidstudioshortcuts.data.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.example.androidstudioshortcuts.data.ShortcutDatabase
+import com.example.androidstudioshortcuts.Shortcut
+import com.example.androidstudioshortcuts.data.repository.ShortcutRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

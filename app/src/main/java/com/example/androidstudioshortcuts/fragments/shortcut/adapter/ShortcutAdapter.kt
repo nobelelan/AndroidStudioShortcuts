@@ -1,14 +1,16 @@
-package com.example.androidstudioshortcuts
+package com.example.androidstudioshortcuts.fragments.shortcut.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.androidstudioshortcuts.R
+import com.example.androidstudioshortcuts.Shortcut
 import com.example.androidstudioshortcuts.databinding.ShortcutRowLayoutBinding
+import com.example.androidstudioshortcuts.fragments.shortcut.ShortcutFragmentDirections
 
 class ShortcutAdapter: RecyclerView.Adapter<ShortcutAdapter.ShortcutViewHolder>() {
 

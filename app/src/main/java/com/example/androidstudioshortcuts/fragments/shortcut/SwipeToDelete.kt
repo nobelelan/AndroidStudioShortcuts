@@ -1,4 +1,4 @@
-package com.example.androidstudioshortcuts
+package com.example.androidstudioshortcuts.fragments.shortcut
 
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView

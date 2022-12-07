@@ -1,4 +1,4 @@
-package com.example.androidstudioshortcuts
+package com.example.androidstudioshortcuts.fragments.shortcut
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -11,7 +11,12 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.androidstudioshortcuts.*
+import com.example.androidstudioshortcuts.Shortcut
+import com.example.androidstudioshortcuts.data.viewmodel.ShortcutViewModel
 import com.example.androidstudioshortcuts.databinding.FragmentShortcutBinding
+import com.example.androidstudioshortcuts.fragments.shortcut.adapter.ShortcutAdapter
+import com.example.androidstudioshortcuts.fragments.utils.hideKeyboard
 import com.google.android.material.snackbar.Snackbar
 
 
@@ -43,6 +48,9 @@ class ShortcutFragment : Fragment(), SearchView.OnQueryTextListener {
         
         // set menu
         setHasOptionsMenu(true)
+
+        // hide soft keyboard
+        hideKeyboard(requireActivity())
 
         return binding.root
     }

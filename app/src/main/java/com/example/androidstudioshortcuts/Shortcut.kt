@@ -14,3 +14,5 @@ data class Shortcut(
     var mac: String,
     var description: String
 ):Parcelable
+
+// putting Shortcut into model package creates Directions related error, due to path change

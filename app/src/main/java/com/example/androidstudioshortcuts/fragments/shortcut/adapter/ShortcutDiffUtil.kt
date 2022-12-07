@@ -1,6 +1,7 @@
-package com.example.androidstudioshortcuts
+package com.example.androidstudioshortcuts.fragments.shortcut.adapter
 
 import androidx.recyclerview.widget.DiffUtil
+import com.example.androidstudioshortcuts.Shortcut
 
 class ShortcutDiffUtil(
     private val oldList: List<Shortcut>,

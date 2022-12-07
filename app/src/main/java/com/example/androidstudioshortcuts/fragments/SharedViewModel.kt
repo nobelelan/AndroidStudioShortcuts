@@ -1,4 +1,4 @@
-package com.example.androidstudioshortcuts
+package com.example.androidstudioshortcuts.fragments
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

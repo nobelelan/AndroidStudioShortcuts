@@ -1,6 +1,8 @@
-package com.example.androidstudioshortcuts
+package com.example.androidstudioshortcuts.data.repository
 
 import androidx.lifecycle.LiveData
+import com.example.androidstudioshortcuts.data.ShortcutDao
+import com.example.androidstudioshortcuts.Shortcut
 
 class ShortcutRepository(private val shortcutDao: ShortcutDao) {
 
